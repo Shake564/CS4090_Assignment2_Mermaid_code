@@ -1,0 +1,39 @@
+graph TD    
+
+    %% Actors  
+
+    subgraph actors  
+
+        A[Employee]  
+
+    end  
+
+   
+
+    %% Use Cases  
+
+    subgraph useCases  
+
+        U1((Share Calendar))  
+
+        U2((View Availability))  
+
+        U3((Coordinate Meeting Time))  
+
+    end  
+
+   
+
+    %% Actor associations  
+
+    A --> U1  
+
+    A --> U3  
+
+   
+
+    %% Use case relationships  
+
+    U1 --> |<<include>>| U2  
+
+    U3 --> |<<include>>| U2
