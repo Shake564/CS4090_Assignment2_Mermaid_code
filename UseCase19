@@ -1,0 +1,55 @@
+graph TD 
+
+   %% Actors  
+
+   subgraph actors  
+
+       A[Employee Team]  
+
+       B[Database]  
+
+       C[UI]  
+
+       D[Notification System]  
+
+   end  
+
+ 
+
+   %% Use Cases  
+
+   subgraph useCases  
+
+       U1((Deadline Management\n& Alerts))  
+
+       U2((Set Deadline))  
+
+       U3((Monitor Deadline))  
+
+       U4((Send Alert))  
+
+   end  
+
+ 
+
+   %% Actor associations  
+
+   A --> U1  
+
+   C --> U1  
+
+   B --> U2  
+
+   B --> U3  
+
+   D --> U4  
+
+ 
+
+   %% Use case relationships  
+
+   U1 --> |<<include>>| U2  
+
+   U1 --> |<<include>>| U3  
+
+   U3 --> |<<include>>| U4
