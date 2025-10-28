@@ -1,0 +1,41 @@
+sequenceDiagram 
+
+   participant User 
+
+   participant Database 
+
+   participant UI 
+
+   participant EventEditor 
+
+   %% Step 1: ADD a event 
+
+   User->>Database: Add an event to Database 
+
+   Database->>UI: Event Sent to UI (may extend Groups, Checklists, or Types) 
+
+   UI-->>User: Display New event 
+
+   User->>User: Ask for input 
+
+   %% Step 2: Edit an event 
+
+   User->>EventEditor: Edit an event 
+
+   EventEditor->>Database: Send new event details to Database 
+
+   Database->>UI: UI updated with new event details 
+
+   UI-->>User: Display updated event 
+
+   User->>User: Ask for input 
+
+   %% Step 3: Delete an event 
+
+   User->>Database: Delete an event from Database 
+
+   Database->>UI: Delete the object from the UI 
+
+   UI-->>User: Delete the Displayed event from UI 
+
+   User->>User: Ask for input
