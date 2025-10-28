@@ -1,0 +1,59 @@
+graph TD 
+
+   %% Actors 
+
+   subgraph actors 
+
+       A[User] 
+
+       B[Database] 
+
+       C[UI] 
+
+   end 
+
+   %% Use Cases 
+
+   subgraph useCases 
+
+       U1((Add Button)) 
+
+       U2((Add to calendar)) 
+
+       U3((Update UI)) 
+
+       U4((Group)) 
+
+       U5((Checklist)) 
+
+       U6((Notes)) 
+
+   end 
+
+   %% Actor associations 
+
+   A-->U1 
+
+   B-->U2 
+
+   B-->U3 
+
+   C-->U3 
+
+   B-->U4 
+
+   B-->U5 
+
+   B-->U6 
+
+   %% Use case relationships 
+
+   U1-->U2 
+
+   U1-->|<<Include>>|U4 
+
+   U1-->|<<Include>>|U5 
+
+   U1-->|<<Include>>|U6 
+
+   U2-->U3
