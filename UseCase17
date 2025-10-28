@@ -1,0 +1,49 @@
+graph TD   
+
+    %% Actors  
+
+    subgraph actors  
+
+        A[Researcher]  
+
+        B[Foot-travel Enthusiast]  
+
+        C[Investor]  
+
+    end  
+
+   
+
+    %% Use Cases  
+
+    subgraph useCases  
+
+        U1((Add Notes))  
+
+        U2((Add Checklist))  
+
+        U3((Check Off Tasks))  
+
+    end  
+
+   
+
+    %% Actor associations  
+
+    A --> U1  
+
+    A --> U2  
+
+    B --> U1  
+
+    B --> U2  
+
+    C --> U1  
+
+    C --> U2  
+
+   
+
+    %% Use case relationships  
+
+    U2 --> |<<include>>| U3 
