@@ -1,0 +1,11 @@
+sequenceDiagram 
+   participant User 
+   participant Database 
+   participant UI 
+   participant EventEditor 
+   
+   %% Step 1: ADD an event 
+   User->>EventEditor: Choose a user group for the event
+   EventEditor->>Database: Update event group and user calendars 
+   Database-->>UI: Notify db update successful
+   UI-->>User: Reflect updated event
