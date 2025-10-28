@@ -1,0 +1,397 @@
+graph LR 
+
+    subgraph actors 
+
+        A[User] 
+
+        B[Database] 
+
+        C[UI] 
+
+        D[Student] 
+
+        E[Employee] 
+
+        F[Lecturer] 
+
+        G[Student] 
+
+        H[Notification System] 
+
+        I[Person with Failing Memory] 
+
+        J[Manager] 
+
+        K[Grader] 
+
+        L[Power User] 
+
+        M[Contractor] 
+
+        N[Researcher] 
+
+        O[Foot-travel Enthusiast] 
+
+        P[Investor] 
+
+        Q[Employee] 
+
+        R[Employee Team] 
+
+    end 
+
+ 
+
+    subgraph useCases 
+
+        %% #1 
+
+        U1((Login)) 
+
+        U2((Look up group)) 
+
+        U3((Load up calendar)) 
+
+        U4((Display calendar)) 
+
+ 
+
+        %% #3 
+
+        U5((Sync Button)) 
+
+        U6((Upload Calendar)) 
+
+        U7((Sync up new events)) 
+
+        U8((Download Calendar)) 
+
+        U9((Display Calendar)) 
+
+ 
+
+        %% #: Delete Event 
+
+        U10((Delete Button)) 
+
+        U11((Remove from calendar)) 
+
+        U12((Update UI)) 
+
+ 
+
+        %% #8 
+
+        U13((Add Button)) 
+
+        U14((Add to calendar)) 
+
+        U15((Update UI)) 
+
+        U16((Group)) 
+
+        U17((Checklist)) 
+
+        U18((Notes)) 
+
+ 
+
+        %% #19 
+
+        U19((Deadline Management & Alerts)) 
+
+        U20((Set Deadline)) 
+
+        U21((Monitor Deadline)) 
+
+        U22((Send Alert)) 
+
+ 
+
+        %% #9 
+
+        U23((Deadlines)) 
+
+        U24((Detect Upcoming Event)) 
+
+        U25((Send Notification)) 
+
+ 
+
+        %% #13 
+
+        U26((Receive Timely Notifications)) 
+
+        U27((RSVP Reminders)) 
+
+        U28((Shift Reminders)) 
+
+ 
+
+        %% #15 
+
+        U29((Manage Events)) 
+
+        U30((Create Event)) 
+
+        U31((Edit Event)) 
+
+        U32((Delete Event)) 
+
+ 
+
+        %% #17 
+
+        U33((Add Notes)) 
+
+        U34((Add Checklist)) 
+
+        U35((Check Off Tasks)) 
+
+ 
+
+        %% #18 
+
+        U36((Share Calendar)) 
+
+        U37((View Availability)) 
+
+        U38((Coordinate Meeting Time)) 
+
+    end 
+
+ 
+
+    %% Actor Relationships 
+
+ 
+
+    %% #1 
+
+    A --> U1 
+
+    B --> U1 
+
+    B --> U2 
+
+    B --> U3 
+
+    C --> U4 
+
+ 
+
+    %% #3 
+
+    D --> U5 
+
+    C --> U5 
+
+    B --> U6 
+
+    B --> U7 
+
+    B --> U8 
+
+    C --> U9 
+
+    E --> U9 
+
+ 
+
+    %% #6 
+
+    D --> U10 
+
+    C --> U10 
+
+    B --> U11 
+
+    C --> U12 
+
+ 
+
+    %% #8 
+
+    A --> U13 
+
+    B --> U14 
+
+    B --> U15 
+
+    C --> U15 
+
+    B --> U16 
+
+    B --> U17 
+
+    B --> U18 
+
+ 
+
+    %% #19 
+
+    R --> U19 
+
+    C --> U19 
+
+    B --> U20 
+
+    B --> U21 
+
+    H --> U22 
+
+ 
+
+    %% #9 
+
+    F --> U23 
+
+    G --> U23 
+
+    C --> U23 
+
+    B --> U24 
+
+    H --> U25 
+
+ 
+
+    %% #13 
+
+    I --> U26 
+
+    J --> U26 
+
+ 
+
+    %% #15 
+
+    K --> U29 
+
+    L --> U29 
+
+    J --> U29 
+
+    M --> U29 
+
+ 
+
+    %% #17 
+
+    N --> U33 
+
+    N --> U34 
+
+    O --> U33 
+
+    O --> U34 
+
+    P --> U33 
+
+    P --> U34 
+
+ 
+
+    %% #18 
+
+    Q --> U36 
+
+    Q --> U38 
+
+ 
+
+    %% Use Case Relationships 
+
+ 
+
+    %% #1 
+
+    U1 --> |<<include>>| U2 
+
+    U1 --> U3 
+
+    U3 --> U4 
+
+ 
+
+    %% #3 
+
+    U5 --> |<<include>>| U6 
+
+    U6 --> U7 
+
+    U7 --> U8 
+
+    U8 --> U9 
+
+ 
+
+    %% #6 
+
+    U10 --> U11 
+
+    U11 --> U12 
+
+ 
+
+    %% #8 
+
+    U13 --> U14 
+
+    U13 --> |<<include>>| U16 
+
+    U13 --> |<<include>>| U17 
+
+    U13 --> |<<include>>| U18 
+
+    U14 --> U15 
+
+ 
+
+    %% #19 
+
+    U19 --> |<<include>>| U20 
+
+    U19 --> |<<include>>| U21 
+
+    U21 --> |<<include>>| U22 
+
+ 
+
+    %% #9 
+
+    U23 --> |<<include>>| U24 
+
+    U23 --> |<<include>>| U25 
+
+ 
+
+    %% #13 
+
+    U26 --> |<<include>>| U27 
+
+    U26 --> |<<include>>| U28 
+
+ 
+
+    %% #15 
+
+    U29 --> |<<include>>| U30 
+
+    U29 --> |<<include>>| U31 
+
+    U29 --> |<<include>>| U32 
+
+ 
+
+    %% #17 
+
+    U34 --> |<<include>>| U35 
+
+ 
+
+    %% #18 
+
+    U36 --> |<<include>>| U37 
+
+    U38 --> |<<include>>| U37 
