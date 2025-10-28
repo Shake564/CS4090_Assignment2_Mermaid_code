@@ -1,0 +1,47 @@
+graph TD 
+
+   %% Actors  
+
+   subgraph actors  
+
+       A[Lecturer]  
+
+       B[Student]  
+
+       C[Database]  
+
+       D[UI]  
+
+       E[Notification System]  
+
+   end  
+
+   %% Use Cases  
+
+   subgraph useCases  
+
+       U1((Deadlines))  
+
+       U2((Detect Upcoming Event)) 
+
+       U3((Send Notification)) 
+
+   end  
+
+   %% Actor associations  
+
+   A --> U1  
+
+   B --> U1  
+
+   D --> U1  
+
+   C --> U2  
+
+   E --> U3  
+
+   %% Use case relationships  
+
+   U1 --> |<<include>>| U2  
+
+   U1 --> |<<include>>| U3 
