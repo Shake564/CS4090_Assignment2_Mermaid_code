@@ -1,0 +1,53 @@
+graph TD   
+
+    %%Actors  
+
+    subgraph actors  
+
+        A[Grader]  
+
+        B[Power User]  
+
+        C[Manager] 
+
+        D[Contractor]  
+
+    end  
+
+  
+
+    %%Use Cases  
+
+    subgraph useCases  
+
+        U1((Manage Events))  
+
+        U2((Create Event))  
+
+        U3((Edit Event))  
+
+        U4((Delete Event))  
+
+    end  
+
+  
+
+    %%Actor Associations  
+
+    A --> U1  
+
+    B --> U1  
+
+    C --> U1  
+
+    D --> U1  
+
+  
+
+    %%Use case relationships  
+
+    U1 --> |<<include>>| U2  
+
+    U1 --> |<<include>>| U3  
+
+    U1 --> |<<include>>| U4
