@@ -1,0 +1,21 @@
+sequenceDiagram 
+
+   participant User1 
+
+   participant Database 
+
+   participant UI 
+
+   participant User2 
+
+   %% Step 1: Upload database state to User 2 
+
+   User1->>UI:Press sync button 
+
+   UI->>Database: save the state of your database 
+
+   %% Step 2: Sync with User2 
+
+   Database->>User2: Upload to user 2 your database 
+
+   User2->>UI: Display updated and synced database 
