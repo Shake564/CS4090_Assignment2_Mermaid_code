@@ -1,0 +1,21 @@
+sequenceDiagram
+
+   participant User
+   participant Database
+   participant UI
+   participant GroupEditor
+
+   %% Step 1: Initiate grouping
+   User->>UI: Select items + choose "Group"
+   UI->>GroupEditor: Request to create group(items, groupName)
+
+   %% Step 2: Attempt persistence
+   GroupEditor->>Database: Create group entry
+   Database-->>GroupEditor: ERROR "Duplicate group name"
+
+   %% Step 3: Exception handling
+   GroupEditor->>UI: Notify failure (group not created)
+   UI-->>User: Display error message "Unable to create group"
+
+   %% Step 4: Await next action
+   User->>User: Ask for input
