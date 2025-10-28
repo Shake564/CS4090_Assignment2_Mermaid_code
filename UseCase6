@@ -1,0 +1,41 @@
+graph TD 
+
+   %% Actors 
+
+   subgraph actors 
+
+       A[User 1] 
+
+       B[Database] 
+
+       C[UI] 
+
+   end 
+
+   %% Use Cases 
+
+   subgraph useCases 
+
+       U1((Delete Button)) 
+
+       U2((Remove from calendar)) 
+
+       U3((Update UI)) 
+
+   end 
+
+   %% Actor associations 
+
+   A-->U1 
+
+   C-->U1 
+
+   B-->U2 
+
+   C-->U3 
+
+   %% Use case relationships 
+
+   U1 --> U2 
+
+   U2 --> U3 
