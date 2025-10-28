@@ -1,0 +1,41 @@
+graph TD  
+
+     %%Actors  
+
+     subgraph actors  
+
+           A[Person with Failing Memory]  
+
+           B[Manager]  
+
+     end  
+
+   
+
+     %%Use Cases  
+
+     subgraph useCases  
+
+           U1((Receive Timely Notifications))  
+
+           U2((RSVP Reminders))  
+
+           U3((Shift Reminders))  
+
+     end  
+
+ 
+
+     %%Actor associations  
+
+     A --> U1  
+
+     B --> U1  
+
+ 
+
+     %% Use case relationships  
+
+     U1 --> |<<include>>| U2  
+
+     U1 --> |<<include>>| U3
