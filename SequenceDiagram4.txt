@@ -1,0 +1,55 @@
+sequenceDiagram 
+
+  
+
+   participant Manager 
+
+   participant Database 
+
+   participant UI 
+
+   participant EventEditor 
+
+  
+
+   %% Step 1: Initiate Deletion 
+
+   Manager->>UI: Select event + click "Delete" 
+
+   UI-->>Manager: Prompt "Delete permanently or Archive?" 
+
+  
+
+   %% Step 2: Branch 
+
+   alt Manager chooses Permanent Delete 
+
+      UI->>EventEditor: Request permanent deletion 
+
+      EventEditor->>Database: Delete event by ID 
+
+      Database-->>EventEditor: Deletion success 
+
+      EventEditor->>UI: Notify deletion success 
+
+      UI-->>Manager: Event removed from calendar view 
+
+   else Manager chooses Archive (Alternative Flow) 
+
+      UI->>EventEditor: Request archive instead of delete 
+
+      EventEditor->>Database: Update event status = Archived 
+
+      Database-->>EventEditor: Archive success 
+
+      EventEditor->>UI: Notify archive success 
+
+      UI-->>Manager: Event hidden from active calendar (archived view) 
+
+   end 
+
+  
+
+   %% Step 3: Await next action 
+
+   Manager->>Manager: Ask for input 
